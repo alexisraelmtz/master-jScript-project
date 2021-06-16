@@ -51,10 +51,10 @@ test("Car current sale price is lower", () => {
 });
 
 
-// test("Move Car 5,000kms", () => {
-//     const kmBefore = golf.kms;
-//     golf.forward(5000);
-//     expect(golf.currentGas()).toBeLessThanOrEqual(golf.tank);
-//     expect(golf.currentGas()).toBe(0);
-//     expect(golf.kms).toBeGreaterThan(kmBefore);
-// });
+test("Move Car 5,000kms", () => {
+    const kmBefore = golf.kms;
+    golf.forward(5000);
+    expect(golf.currentGas()).toBeLessThanOrEqual(golf.tank);
+    expect(golf.currentGas()).toBe(0);
+    expect(golf.kms).toBeGreaterThan(kmBefore);
+});

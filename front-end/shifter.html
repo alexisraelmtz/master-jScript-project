@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Hello Enroute World!</title>
+    <script>
+
+
+        function day() {
+            const heading = document.querySelector("h1");
+
+            if (heading.innerHTML === "Hi,") {
+                heading.innerHTML = "Good Night!";
+            } if (heading.innerHTML === "Good Morning!") {
+                heading.innerHTML = "Good Night!";
+            } else {
+                heading.innerHTML = "Good Morning!";
+            }
+
+        }
+        let counter = 0;
+
+        function count() {
+            // let counter = 0;
+            counter++;
+            document.querySelector("h2").innerHTML = counter;
+
+            if (counter % 10 === 0) {
+                alert(`counter is now ${counter}`)
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // document.querySelector("button").onclick = count;
+            document.querySelector("button").addEventListener("click", count);
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <h1>Hi,</h1>
+    <button onclick="day()">Start Shifting Time! </button>
+    <!-- <button onclick="day(), count()">Start counterxing! </button> -->
+    <h2></h2>
+
+</body>
+
+</html>

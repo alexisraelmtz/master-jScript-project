@@ -9,6 +9,7 @@ class Car {
     hybrid = false;
     tank = 0;
     kms = 0;
+    ya
 
     constructor(props) {
         this.company = props['company'];
@@ -47,12 +48,13 @@ class Car {
             this.gas -= this.maxDistance() / this.kmPerLt;
         } else {
             this.kms += kms;
-            this.gas -= kms / this.kms;
+            this.gas -= kms / this.kmPerLt;
         }
-
-        this.kms += kms;
-        this.gas -= kms / this.kmPerLt
     }
+
 }
 
 module.exports = Car;
+
+// Alex Israel Martinez
+// Enroute Rockstars 6G
