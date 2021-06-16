@@ -29,9 +29,21 @@ class Hand {
     }
 }
 
+
+const firstDeck = new Deck();
+const playerOne = new Hand(firstDeck, 4);
+
+function showDeck() {
+    alert("This Worked from jScript")
+    document.querySelector("#userHand").innerHTML = (`${playerOne.cards}`);
+    document.querySelector("#deck").innerHTML = (`${firstDeck.cards}`);
+}
+
+
 module.exports = {
     Deck,
-    Hand
+    Hand,
+    showDeck
 };
 
 

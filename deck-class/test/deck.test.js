@@ -1,4 +1,4 @@
-const { Deck, Hand } = require('../app/deck');
+const { Deck, Hand } = require('./app/deck.js');
 
 const deck = new Deck();
 
@@ -19,6 +19,5 @@ test('deck should return random cards', () => {
             return [card, ''];
         })
     );
-
     expect(Object.keys(handObject).length).toBe(5);
 });
