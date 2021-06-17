@@ -9,7 +9,6 @@ class Car {
     hybrid = false;
     tank = 0;
     kms = 0;
-    ya
 
     constructor(props) {
         this.company = props['company'];
@@ -50,6 +49,13 @@ class Car {
             this.kms += kms;
             this.gas -= kms / this.kmPerLt;
         }
+    }
+
+    devaluationEstimate(saleYear) {
+        let yearlyDevaluation = 0.1
+        sinceBuy = (saleYear - this.year) * yearlyDevaluation
+        devaluedPrice = this.price * (yearlyDevaluation - 1)
+        return devaluedPrice
     }
 
 }

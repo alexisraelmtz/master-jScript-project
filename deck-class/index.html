@@ -12,50 +12,48 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <title>Enroute RS6G Programm!</title>
+    <link rel='stylesheet' href='./public/styles.css' />
 </head>
 
 <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="./assets/logo enroute.png" alt="" width="30" height="24" class="d-inline-block align-text-end">
+            <img src="./public/logo enroute.png" alt="" width="30" height="24" class="d-inline-block align-text-end">
             JavaScript - Learning 101
         </a>
     </div>
 </nav>
 
 <body>
-    <div class="d-grid gap-3">
+    <script src='./public/extend.js'></script>
+    <div class="mp-xy-5">
         <p class="fs-1">Welcome to the Poker Deck</p>
         <p class="text-start">
             This is my First JScript Web Application <br>
             Feel free to click the button below!
         </p>
-        <!-- <p class="text-start"></p> -->
-    </div>
 
-    <button type="button" class="btn btn-primary position-relative" onclick="showDeck()">
-        Generete a Poker Deck Now! <svg width="1em" height="1em" viewBox="0 0 16 16"
-            class="position-absolute top-100 start-50 translate-middle mt-1 bi bi-caret-down-fill" fill="#212529">
-        </svg>
-    </button>
+        <button type="button" class="btn btn-primary position-relative">
+            Generete a Poker Deck Now! <svg width="1em" height="1em" viewBox="0 0 16 16"
+                class="position-absolute top-100 start-50 translate-middle mt-1 bi bi-caret-down-fill" fill="#212529">
+            </svg>
+        </button>
+        <p></p>
+        <div class="deck">bien!</div>
+        <footer class="d-grid gap-3">
+            <p class="fw-light">By - Alex Israel Martínez</p>
+        </footer>
+</body>
 
-    <div>
-        <h3 id="userHand"></h3>
-        <h3 id="deck"></h3>
-    </div>
+</html>
+</body>
 
 
-
-    <footer class="d-grid gap-3">
-        <p class="fw-light">By - Alex Israel Martínez</p>
-    </footer>
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-        crossorigin="anonymous"></script>
-
-    <script src="./app/deck.js">
-    </script>
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+<script src="extends.js"></script>
 </body>
 
 </html>

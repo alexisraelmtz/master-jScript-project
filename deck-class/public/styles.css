@@ -1,0 +1,46 @@
+body {
+    background-color: #b0ac89;
+}
+
+.card {
+    position: relative;
+    background-color: #815d72;
+    border: 1px white solid;
+    border-radius: 10px;
+    margin: 5px;
+    width: 100px;
+    height: 150px;
+    display: inline-block;
+    color: black;
+}
+
+.card.♦,
+.card.♥ {
+    color: red;
+}
+
+.card-corner {
+    margin: 5px;
+    font-family: monospace;
+    text-align: center;
+    position: absolute;
+}
+
+.top-left {
+    top: 0px;
+    left: 0px;
+}
+
+.bottom-right {
+    right: 0px;
+    bottom: 0px;
+    transform: rotate(0.5turn);
+}
+
+.symbols {
+    position: relative;
+}
+
+.symbols div {
+    position: absolute;
+}

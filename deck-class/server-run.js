@@ -1,16 +1,22 @@
-const express = require('express')
-const app = express()
-const port = 3001
+const express = require('express');
+const app = express();
+const port = 4010;
+app.use(cors())
 
-index = require("./index.html")
+app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-    res.send({
-        index
-    });
-});
+const { Deck, Hand } = require('./app/deck.js');
+
+const deck = new Deck();
+
+
+app.get('/deck', (req, res) => {
+    res.json(deck.cards);
+})
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
-})
+    console.log(`Server running on port ${port}`);
+});
+
+
 

@@ -1,4 +1,5 @@
-const { Deck, Hand } = require('./app/deck.js');
+const { test } = require('jest-circus');
+const { Deck, Hand } = require('../app/deck.js');
 
 const deck = new Deck();
 
@@ -21,3 +22,5 @@ test('deck should return random cards', () => {
     );
     expect(Object.keys(handObject).length).toBe(5);
 });
+
+test("Should give ")

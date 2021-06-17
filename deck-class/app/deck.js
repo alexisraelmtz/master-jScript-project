@@ -1,7 +1,6 @@
 class Deck {
     numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'];
     suits = ['♣', '♦', '♥', '♠'];
-
     cards = [];
 
     constructor() {
@@ -27,23 +26,11 @@ class Hand {
     constructor(deck, size) {
         this.cards = deck.dispatchCards(size);
     }
-}
-
-
-const firstDeck = new Deck();
-const playerOne = new Hand(firstDeck, 4);
-
-function showDeck() {
-    alert("This Worked from jScript")
-    document.querySelector("#userHand").innerHTML = (`${playerOne.cards}`);
-    document.querySelector("#deck").innerHTML = (`${firstDeck.cards}`);
-}
-
+};
 
 module.exports = {
     Deck,
     Hand,
-    showDeck
 };
 
 
