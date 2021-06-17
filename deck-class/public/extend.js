@@ -1,6 +1,6 @@
 const createCard = (number, symbol) => {
     const cardDiv = document.createElement('div');
-    // const isNumber = !isNaN(number);
+    const isNumber = !isNaN(number);
     cardDiv.classList.add('card');
     cardDiv.setAttribute('symbol', symbol);
     cardDiv.setAttribute('number', symbol);
@@ -21,20 +21,20 @@ const createCard = (number, symbol) => {
         <div class="card-corner bottom-right">
             <div>${number}</div>
             <div>${symbol}</div>
-    </div>
-    `;
-
+    </div>`;
     return (cardDiv);
 }
 
 window.addEventListener('load', function () {
-    const container = document.querySelector('.deck');
     (async () => {
-        const { cards } = await (await fetch('/deck')).json();
+        const cards = await (await fetch('/deck')).json();
+        console.log(cards)
+        // debugger
+        const container = document.querySelector('.deck');
 
         cards.forEach((card) => {
-            const number = json[0].slice(0, -1);
-            const symbol = json[0].slice(-1);
+            const number = card.slice(0, -1);
+            const symbol = card.slice(-1);
 
             container.append(createCard(number, symbol));
         });
