@@ -1,4 +1,9 @@
 body {
+    background-image: url("./back3.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: overlay;
     background-color: #e9e9e9;
 }
 
@@ -12,57 +17,66 @@ body {
     display: inline-block;
     /* color: rgb(247, 0, 255); */
     position: relative;
+    box-shadow: 5px 5px 15px rgba(20, 20, 20, 0.5);
 }
 
 
 .card[symbol="♣"], 
 .card[symbol="♠"] {
-    color: rgb(0, 26, 255);
+    color: rgb(0, 16, 156);
 }
 
 
 .card[symbol="♦"], 
 .card[symbol="♥"] {
-    color: red;
+    color: rgb(189, 0, 0);
 }
 
 
 .card-corner {
-    margin: 5px;
     font-family: monospace;
     text-align: center;
     position: absolute;
+    margin: 2px;
+
 }
 
 
 .top-left {
-    margin: 0px;
-    top: 0px;
-    left: 0px;
+    left: 4px;
+    height: 30px;
+    
 }
 
 
 .bottom-right {
-    /* position: absolute; */
-    right: 0px;
-    bottom: 0px;
-    /* margin: 3px; */
-    /* transform: scale(1,-1); */
+    right: 3px;
+    bottom: -2px;
     transform: rotate(0.5turn);
 }
 
 
 .symbols {
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap row;
+    margin: 15%;
+    width: 75%;
+    height: 75%;
     position: relative;
-    height:  100%;
 }
 
 
 .symbols div {
-    position: absolute;
-    font-size: 28px;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    width: 32px;
+    transform: scale(1.8);
 }
-
+/* 
 
 .card[number="2"].symbol div {
     left: 50%;
@@ -76,4 +90,5 @@ body {
 .card[number="2"].symbol div:nth-child(2) {
     top: 20px;
     transform:  translateX(-50%) rotate(0.5turn);
-}
+} */
+
