@@ -47,9 +47,8 @@ const createCard = (card, turned) => {
     const number = card.slice(0, -1);
     const symbol = card.slice(-1)
     const cardDiv = createCardDiv({ symbol, number });
-
-    cardDiv.innerHTML = `
-    <div class="container">
+    console.log(`It worked! ${cardDiv}`)
+    cardDiv.innerHTML = `<div class="container">
         ${createCardFront(`
             ${createCardCorner(number, symbol)}
             ${createCardSymbol(number, symbol)}
@@ -82,7 +81,7 @@ const createDeck = async ({ selector, path, turned }) => {
 }
 
 const onClickElementId = (id, callback) => {
-    document.getElementById(id).addEventListener('click', callback);
+    document.getElementsByClassName(id).addEventListener('click', callback);
 }
 
 
