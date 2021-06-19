@@ -19,22 +19,16 @@ app.get('/deck', (req, res) => {
 })
 
 app.get('/table', (req, res) => {
-    res.json({
-        table,
-    });
+    res.json(table);
 });
 
 app.get('/deck/:size', (req, res) => {
     const { size } = req.params;
-    res.json(deck.fetchDeck(size));
+    res.json(deck.fetchDeck(parseInt(size)));
 });
 
 app.get('/admin', (req, res) => {
-    res.json({
-        deck,
-        table,
-        users
-    });
+    res.json(deck, table, users);
 });
 
 app.listen(port, () => {

@@ -1,4 +1,4 @@
-const createCardDiv = (attributes) => {
+const createCardDiv = (symbol, number) => {
     const htmlCardDiv = document.createElement('div');
     htmlCardDiv.setAttribute('symbol', symbol);
     htmlCardDiv.setAttribute('number', number);
@@ -45,9 +45,9 @@ const createCardBack = () => {
 
 const createCard = (card, turned) => {
     const number = card.slice(0, -1);
-    const symbol = card.slice(-1)
-    const cardDiv = createCardDiv({ symbol, number });
-    console.log(`It worked! ${cardDiv}`)
+    const symbol = card.slice(-1);
+    const cardDiv = createCardDiv(symbol, number);
+    console.log(`It worked! ${cardDiv}`);
     cardDiv.innerHTML = `<div class="container">
         ${createCardFront(`
             ${createCardCorner(number, symbol)}
@@ -75,13 +75,12 @@ const createCard = (card, turned) => {
 
 const createDeck = async ({ selector, path, turned }) => {
     const container = document.querySelector(selector);
-    console.log(container);
     const cards = await (await fetch(path)).json();
     cards.forEach((card, index) => container.append(createCard(card, (index < turned))));
 }
 
 const onClickElementId = (id, callback) => {
-    document.getElementsByClassName(id).addEventListener('click', callback);
+    document.getElementById(id).addEventListener('click', callback);
 }
 
 
@@ -99,10 +98,10 @@ window.addEventListener('load', function () {
             turned: 2
         });
 
-        const cardSize = 2;
+        const cardSize = parseInt(2);
         await createDeck({
             selector: '.deck.hand',
-            path: '/deck/${cardSize}',
+            path: `/deck/${cardSize}`,
             turned: cardSize
         });
 
@@ -114,5 +113,5 @@ window.addEventListener('load', function () {
                     }, (500 * (index)));
                 });
         })
-    })
+    })()
 });
