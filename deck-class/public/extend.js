@@ -6,11 +6,11 @@ const createCardDiv = (symbol, number) => {
 }
 
 const createCardFront = (content) => {
-    return `<div class="front>${content}</div>`;
+    return `<div class="front">${content}</div>`;
 }
 
-const createCardCorner = (number, symbol) => {
-    return `<div class="card-corner">
+const createCardCorner = (number, symbol, side) => {
+    return `<div class="card-corner ${side}">
         <div>${number}</div>
         <div>${symbol}</div>
     </div>`;
@@ -49,14 +49,13 @@ const createCard = (card, turned) => {
     const cardDiv = createCardDiv(symbol, number);
     console.log(`It worked! ${cardDiv}`);
     cardDiv.innerHTML = `<div class="container">
-        ${createCardFront(`
-            ${createCardCorner(number, symbol)}
-            ${createCardSymbol(number, symbol)}
-            ${createCardCorner(number, symbol)}
-        `)}
-        ${createCardBack()}
-    <div/>
-    `;
+            ${createCardFront(`
+                ${createCardCorner(number, symbol, "top-left")}
+                ${createCardSymbol(number, symbol)}
+                ${createCardCorner(number, symbol, "down-right")}
+            `)}
+            ${createCardBack()}
+                        `;
 
     cardDiv.addEventListener('click', () => {
         if (cardDiv.classList.contains('turned')) {
@@ -92,18 +91,18 @@ window.addEventListener('load', function () {
             turned: 0
         });
 
-        await createDeck({
-            selector: '.deck.table',
-            path: '/table',
-            turned: 2
-        });
+        // await createDeck({
+        //     selector: '.deck.table',
+        //     path: '/table',
+        //     turned: 2
+        // });
 
-        const cardSize = parseInt(2);
-        await createDeck({
-            selector: '.deck.hand',
-            path: `/deck/${cardSize}`,
-            turned: cardSize
-        });
+        // const cardSize = parseInt(2);
+        // await createDeck({
+        //     selector: '.deck.hand',
+        //     path: `/deck/${cardSize}`,
+        //     turned: cardSize
+        // });
 
         onClickElementId('turn-cards', () => {
             document.querySelectorAll('.deck.hand .card')
