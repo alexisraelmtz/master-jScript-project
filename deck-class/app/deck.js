@@ -11,7 +11,7 @@ class Deck {
         });
     }
 
-    dispatchCards(size) {
+    fetchDeck(size) {
         return new Array(size)
             .fill()
             .map(
@@ -21,16 +21,16 @@ class Deck {
     }
 }
 
-class Hand {
-    cards = [];
-    constructor(deck, size) {
-        this.cards = deck.dispatchCards(size);
-    }
-};
+// class Hand {
+//     cards = [];
+//     constructor(deck, size) {
+//         this.cards = deck.fetchDeck(size);
+//     }
+// };
 
 module.exports = {
     Deck,
-    Hand,
+    // Hand,
 };
 
 

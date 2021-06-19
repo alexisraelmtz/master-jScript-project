@@ -68,14 +68,14 @@ body {
     position: relative;
 }
 
-
+/* 
 .symbols div {
     position: relative;
     text-align: center;
     display: inline-block;
     width: 32px;
     transform: scale(1.8);
-}
+} */
 /* 
 
 .card[number="2"].symbol div {
