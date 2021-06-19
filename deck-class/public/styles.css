@@ -7,9 +7,22 @@ body {
     background-color: #e9e9e9;
 }
 
-.card {
+
+.card[symbol="♣"], 
+.card[symbol="♠"] {
+    color: rgb(0, 16, 156);
+}
+
+
+.[symbol="♦"], 
+.[symbol="♥"] {
+    color: rgb(189, 0, 0);
+}
+
+
+.container {
     background-color: #ffffff;
-    border: 1px rgba(136, 136, 136, 0.623) solid;
+    border: 3px rgba(192, 192, 192, 0.726) solid;
     border-radius: 6px;
     margin: 6px;
     width: 100px;
@@ -18,21 +31,13 @@ body {
     /* color: rgb(247, 0, 255); */
     position: relative;
     box-shadow: 5px 5px 15px rgba(20, 20, 20, 0.5);
+    width: 100%;
 }
 
 
-.card[symbol="♣"], 
-.card[symbol="♠"] {
-    color: rgb(0, 16, 156);
-}
 
 
-.card[symbol="♦"], 
-.card[symbol="♥"] {
-    color: rgb(189, 0, 0);
-}
-
-
+/* 
 .card-corner {
     font-family: monospace;
     text-align: center;
@@ -57,7 +62,7 @@ body {
 
 
 .symbols {
-    /* position: relative; */
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,7 +71,8 @@ body {
     width: 75%;
     height: 75%;
     position: relative;
-}
+} 
+*/
 
 /* 
 .symbols div {
