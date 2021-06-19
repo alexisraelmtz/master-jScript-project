@@ -12,25 +12,24 @@ class Deck {
     }
 
     fetchDeck(size) {
-        return new Array(size)
-            .fill()
-            .map(
-                () =>
-                    this.cards.splice(parseInt(Math.random() * this.cards.length), 1)[0]
-            );
+        const cards = new Array(parseInt(size)).fill('');
+        return cards.map(() => {
+            const index = parseInt(Math.random() * this.cards.length);
+            return this.cards.splice(index, 1)[0]
+        }).filter(Boolean);
     }
 }
 
-// class Hand {
-//     cards = [];
-//     constructor(deck, size) {
-//         this.cards = deck.fetchDeck(size);
-//     }
-// };
+class Hand {
+    cards = [];
+    constructor(deck, size) {
+        this.cards = deck.fetchDeck(size);
+    }
+};
 
 module.exports = {
     Deck,
-    // Hand,
+    Hand,
 };
 
 

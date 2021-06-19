@@ -10,27 +10,32 @@ app.use(express.json());
 
 
 const deck = new Deck();
-// const shuffled = deck.fetchDeck(5);
-// const hand = deck.fetchDeck(5);
+const users = {};
+let table = deck.fetchDeck(5);
+
 
 app.get('/deck', (req, res) => {
     res.json(deck.cards);
 })
 
-// app.get('/table', (req, res) => {
-//     res.json({
-//         table,
-//     });
-// });
+app.get('/table', (req, res) => {
+    res.json({
+        table,
+    });
+});
 
-// app.get('/hand/:size', (req, res) => {
-//     const { size } = req.params;
-//     const playerHand = new Hand(deck, parseInt(size));
-//     res.json({
-//         playerHand,
-//         tableHand,
-//     });
-// });
+app.get('/deck/:size', (req, res) => {
+    const { size } = req.params;
+    res.json(deck.fetchDeck(size));
+});
+
+app.get('/admin', (req, res) => {
+    res.json({
+        deck,
+        table,
+        users
+    });
+});
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
