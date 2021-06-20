@@ -91,18 +91,18 @@ window.addEventListener('load', function () {
             turned: 0
         });
 
-        // await createDeck({
-        //     selector: '.deck.table',
-        //     path: '/table',
-        //     turned: 2
-        // });
+        await createDeck({
+            selector: '.deck.table',
+            path: '/table',
+            turned: 2
+        });
 
-        // const cardSize = parseInt(2);
-        // await createDeck({
-        //     selector: '.deck.hand',
-        //     path: `/deck/${cardSize}`,
-        //     turned: cardSize
-        // });
+        const cardSize = parseInt(2);
+        await createDeck({
+            selector: '.deck.hand',
+            path: `/deck/${cardSize}`,
+            turned: cardSize
+        });
 
         onClickElementId('turn-cards', () => {
             document.querySelectorAll('.deck.hand .card')

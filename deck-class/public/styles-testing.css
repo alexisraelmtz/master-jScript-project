@@ -206,23 +206,6 @@
 	transform: rotate(0.5turn);
   }
   
-  .symbols {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-flow: wrap row;
-	margin: 12.5%;
-	width: 75%;
-	height: 75%;
-	position: relative;
-  }
-  
-  .symbols div {
-	text-align: center;
-	display: inline-block;
-	width: 32px;
-	transform: scale(1.6);
-  }
   
   .card-A .symbols div {
 	transform: scale(5);
