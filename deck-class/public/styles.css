@@ -7,20 +7,18 @@ body {
     background-color: #e9e9e9;
     width: 100%;
     min-height: 100vh;
-    margin: 0;
+    margin: 0px;
     display: flex;
     flex-flow: column;
 }
 
 
-.deck,
-.deck.table,
-.deck.hand,
-.button[id$="turn-cards"] {
+.table,
+.hand {
     display: flex;
     min-height: 100vh;
-    flex-flow: wrap;
-    justify-content: center;
+    flex-flow: wrap; 
+    justify-content: center; 
 }
 
 
@@ -452,7 +450,7 @@ div[number$="10"] .symbols div:nth-child(10) {
     background-position: -1px -50.5px;
 }
 [symbol="♥"][number="K"] .image {
-    background-position: -102.5 -50.5px;
+    background-position: -102.5px -50.5px;
 }
 [symbol="♥"][number="Q"] .image {
     background-position: -52px -50.5px;
@@ -460,7 +458,7 @@ div[number$="10"] .symbols div:nth-child(10) {
 
 
 [symbol="♣"][number="J"] .image {
-    background-position: -1.5px -198.5px;
+    background-position: -1px -198.5px;
 }
 [symbol="♣"][number="K"] .image {
     background-position: -102.5px -198.5px;
