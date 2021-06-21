@@ -444,7 +444,7 @@ div[number$="10"] .symbols div:nth-child(10) {
     background-position: -102.5px -124.5px;
 }
 [symbol="♦"][number="Q"] .image {
-    background-position: -103px -124.5px;
+    background-position: -52px -124.5px;
 }
 
 
@@ -460,27 +460,26 @@ div[number$="10"] .symbols div:nth-child(10) {
 
 
 [symbol="♣"][number="J"] .image {
-    background-position: -1.5px ​-198.5px;
+    background-position: -1.5px -198.5px;
 }
 [symbol="♣"][number="K"] .image {
-    background-position: -102.5px ​-198.5px;
+    background-position: -102.5px -198.5px;
 }
 [symbol="♣"][number="Q"] .image {
-    background-position: -52px ​-198.5px;
+    background-position: -52px -198.5px;
 }
 
 
-/* 
+
 [symbol="♠"][number="J"] .image {
-    background-position: -8px 15.5px;
-}
-[symbol="♠"][number="K"] .image {
-    background-position: -102.5px ​23.5px;
+    background-position: -1px 23.5px;
 }
 [symbol="♠"][number="Q"] .image {
     background-position: -52px 23.5px;
-} */
-
+}
+[symbol="♠"][number="K"] .image {
+    background-position: -102.5px 23.5px;
+}
 
 
 
