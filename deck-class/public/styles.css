@@ -189,7 +189,7 @@ div[number$="6"] .symbols div:nth-child(1) {
     left: 20%;
 }
 div[number$="6"] .symbols div:nth-child(2) {
-    top: 40%;
+    bottom: 43%;
     left: 20%;
 }
 div[number$="6"] .symbols div:nth-child(3) {
@@ -203,7 +203,7 @@ div[number$="6"] .symbols div:nth-child(4) {
     left: 55%;
 }
 div[number$="6"] .symbols div:nth-child(5) {
-    top: 40%;
+    bottom: 43%;
     left: 55%;
 }
 div[number$="6"] .symbols div:nth-child(6) {
@@ -223,7 +223,7 @@ div[number$="7"] .symbols div:nth-child(1) {
     left: 20%;
 }
 div[number$="7"] .symbols div:nth-child(2) {
-    top: 40%;
+    bottom: 40%;
     left: 20%;
 }
 div[number$="7"] .symbols div:nth-child(3) {
@@ -237,7 +237,7 @@ div[number$="7"] .symbols div:nth-child(4) {
     left: 55%;
 }
 div[number$="7"] .symbols div:nth-child(5) {
-    top: 40%;
+    bottom: 40%;
     left: 55%;
 }
 div[number$="7"] .symbols div:nth-child(6) {
@@ -248,4 +248,151 @@ div[number$="7"] .symbols div:nth-child(6) {
 div[number$="7"] .symbols div:nth-child(7) {
     top: 29%;
     left: 37%;
+}
+
+
+
+
+div[number$="8"] .symbols div {
+    position: absolute;
+}
+div[number$="8"] .symbols div:nth-child(1) {
+    top: 15%;
+    left: 20%;
+}
+div[number$="8"] .symbols div:nth-child(2) {
+    bottom: 43%;
+    left: 20%;
+}
+div[number$="8"] .symbols div:nth-child(3) {
+    top: 70%;
+    left: 20%;
+    transform: rotate(0.5turn) scale(2.1);
+}
+
+div[number$="8"] .symbols div:nth-child(4) {
+    top: 15%;
+    left: 55%;
+}
+div[number$="8"] .symbols div:nth-child(5) {
+    bottom: 43%;
+    left: 55%;
+}
+div[number$="8"] .symbols div:nth-child(6) {
+    top: 70%;
+    left: 55%;
+    transform: rotate(0.5turn) scale(2.1);
+}
+div[number$="8"] .symbols div:nth-child(7) {
+    top: 29%;
+    left: 37%;
+}
+div[number$="8"] .symbols div:nth-child(8) {
+    bottom: 25%;
+    left: 37%;
+    transform: rotate(0.5turn) scale(2.1);
+}
+
+
+
+
+
+div[number$="9"] .symbols div {
+    position: absolute;
+}
+div[number$="9"] .symbols div:nth-child(1) {
+    top: 13%;
+    left: 20%;
+}
+div[number$="9"] .symbols div:nth-child(2) {
+    top: 13%;
+    left: 55%;
+}
+div[number$="9"] .symbols div:nth-child(3) {
+    top: 31%;
+    left: 20%;
+}
+div[number$="9"] .symbols div:nth-child(4) {
+    top: 31%;
+    left: 55%;
+}
+
+
+div[number$="9"] .symbols div:nth-child(5) {
+    bottom: 13%;
+    left: 20%;
+    transform: rotate(0.5turn) scale(2.1);
+}
+div[number$="9"] .symbols div:nth-child(6) {
+    bottom: 13%;
+    left: 55%;
+    transform: rotate(0.5turn) scale(2.1);
+}
+div[number$="9"] .symbols div:nth-child(7) {
+    bottom: 31%;
+    left: 20%;
+    transform: rotate(0.5turn) scale(2.1);
+}
+div[number$="9"] .symbols div:nth-child(8) {
+    bottom: 31%;
+    left: 55%;
+    transform: rotate(0.5turn) scale(2.1);
+}
+div[number$="9"] .symbols div:nth-child(9) {
+    top: 40%;
+    left: 37%;
+}
+
+
+
+
+div[number$="10"] .symbols div {
+    position: absolute;
+}
+div[number$="10"] .symbols div:nth-child(1) {
+    top: 13%;
+    left: 20%;
+}
+div[number$="10"] .symbols div:nth-child(2) {
+    top: 13%;
+    left: 55%;
+}
+div[number$="10"] .symbols div:nth-child(3) {
+    top: 31%;
+    left: 20%;
+}
+div[number$="10"] .symbols div:nth-child(4) {
+    top: 31%;
+    left: 55%;
+}
+
+
+div[number$="10"] .symbols div:nth-child(5) {
+    bottom: 13%;
+    left: 20%;
+    transform: rotate(0.5turn) scale(2.1);
+}
+div[number$="10"] .symbols div:nth-child(6) {
+    bottom: 13%;
+    left: 55%;
+    transform: rotate(0.5turn) scale(2.1);
+}
+div[number$="10"] .symbols div:nth-child(7) {
+    bottom: 31%;
+    left: 20%;
+    transform: rotate(0.5turn) scale(2.1);
+}
+div[number$="10"] .symbols div:nth-child(8) {
+    bottom: 31%;
+    left: 55%;
+    transform: rotate(0.5turn) scale(2.1);
+}
+div[number$="10"] .symbols div:nth-child(9) {
+    top: 22%;
+    left: 37%;
+}
+div[number$="10"] .symbols div:nth-child(10) {
+    bottom: 22%;
+    left: 37%;
+    transform: rotate(0.5turn) scale(2.1);
 }
