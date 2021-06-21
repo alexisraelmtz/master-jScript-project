@@ -1,7 +1,11 @@
-const createCardDiv = (symbol, number) => {
+const createCardDiv = (attributes) => {
     const htmlCardDiv = document.createElement('div');
-    htmlCardDiv.setAttribute('symbol', symbol);
-    htmlCardDiv.setAttribute('number', number);
+
+    htmlCardDiv.classList.add('card');
+    Object.entries(attributes).forEach(([key, value]) => {
+        htmlCardDiv.setAttribute(key, value);
+    });
+
     return htmlCardDiv;
 }
 
@@ -46,7 +50,7 @@ const createCardBack = () => {
 const createCard = (card, turned) => {
     const number = card.slice(0, -1);
     const symbol = card.slice(-1);
-    const cardDiv = createCardDiv(symbol, number);
+    const cardDiv = createCardDiv({ symbol, number });
     console.log(`It worked! ${cardDiv}`);
     cardDiv.innerHTML = `<div class="container">
             ${createCardFront(`
@@ -55,6 +59,7 @@ const createCard = (card, turned) => {
                 ${createCardCorner(number, symbol, "down-right")}
             `)}
             ${createCardBack()}
+            </div>
                         `;
 
     cardDiv.addEventListener('click', () => {
@@ -105,7 +110,7 @@ window.addEventListener('load', function () {
         });
 
         onClickElementId('turn-cards', () => {
-            document.querySelectorAll('.deck.hand .container')
+            document.querySelectorAll('.container')
                 .forEach((element, index) => {
                     setTimeout(() => {
                         element.classList.remove('turned');
