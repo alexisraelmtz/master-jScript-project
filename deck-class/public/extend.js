@@ -105,7 +105,7 @@ window.addEventListener('load', function () {
         });
 
         onClickElementId('turn-cards', () => {
-            document.querySelectorAll('.hand .card')
+            document.querySelectorAll('.hand .container')
                 .forEach((element, index) => {
                     setTimeout(() => {
                         element.classList.remove('turned');
