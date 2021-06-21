@@ -15,12 +15,21 @@ body {
 
 .deck,
 .deck.table,
-.deck.hand {
+.deck.hand,
+.button[id$="turn-cards"] {
     display: flex;
     min-height: 100vh;
     flex-flow: wrap;
     justify-content: center;
 }
+
+
+.container>.front>.card-corner.top-left>div:nth-child(2),
+.container>.front>.card-corner.down-right>div:nth-child(2) {
+    position: relative;
+    top: -8px;
+    transform: scale(1.25);
+    }
 
 
 .container{
@@ -395,4 +404,12 @@ div[number$="10"] .symbols div:nth-child(10) {
     bottom: 22%;
     left: 37%;
     transform: rotate(0.5turn) scale(2.1);
+}
+
+
+
+.container .front .symbols div.image {
+    background: black;
+    width: 100%;
+    height: 100%;
 }
