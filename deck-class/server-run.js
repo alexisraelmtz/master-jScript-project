@@ -12,12 +12,14 @@ app.use(express.json());
 const deck = new Deck();
 const users = {};
 let table = deck.fetchDeck(5);
-
+const fullDeck = new Deck()
 
 app.get('/deck', (req, res) => {
-    res.json(deck.cards);
+    res.json(fullDeck.cards);
 })
-
+app.get("/fulldeck", (req, res) =>{
+    res.sendFile(__dirname + "/public/fulldeck.html")
+})
 app.get('/table', (req, res) => {
     res.json(table);
 });

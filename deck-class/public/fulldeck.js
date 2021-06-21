@@ -85,24 +85,24 @@ const onClickElementId = (id, callback) => {
 
 window.addEventListener('load', function () {
     (async () => {
-        // await createDeck({
-        //     selector: '.deck',
-        //     path: '/deck',
-        //     turned: 0
-        // });
-
         await createDeck({
             selector: '.deck',
-            path: '/table',
-            turned: 2
+            path: '/deck',
+            turned: 0
         });
 
-        const cardSize = parseInt(2);
-        await createDeck({
-            selector: '.hand',
-            path: `/deck/${cardSize}`,
-            turned: cardSize
-        });
+        // await createDeck({
+        //     selector: '.table',
+        //     path: '/table',
+        //     turned: 2
+        // });
+
+        // const cardSize = parseInt(2);
+        // await createDeck({
+        //     selector: '.hand',
+        //     path: `/deck/${cardSize}`,
+        //     turned: cardSize
+        // });
 
         onClickElementId('turn-cards', () => {
             document.querySelectorAll('.hand .card')
