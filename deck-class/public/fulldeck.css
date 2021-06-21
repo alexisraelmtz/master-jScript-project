@@ -22,7 +22,7 @@ body {
 }
 
 .hand,
-.table {
+.game {
     display: flex;
     justify-content: center;
 }

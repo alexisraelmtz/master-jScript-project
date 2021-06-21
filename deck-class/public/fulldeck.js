@@ -92,8 +92,8 @@ window.addEventListener('load', function () {
         });
 
         // await createDeck({
-        //     selector: '.table',
-        //     path: '/table',
+        //     selector: '.game',
+        //     path: '/game',
         //     turned: 2
         // });
 

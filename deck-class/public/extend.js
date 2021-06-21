@@ -93,7 +93,7 @@ window.addEventListener('load', function () {
 
         await createDeck({
             selector: '.deck',
-            path: '/table',
+            path: '/game',
             turned: 2
         });
 
@@ -105,12 +105,13 @@ window.addEventListener('load', function () {
         });
 
         onClickElementId('turn-cards', () => {
-            document.querySelectorAll('.hand .card')
+            document.querySelectorAll('.deck.hand .container')
                 .forEach((element, index) => {
                     setTimeout(() => {
                         element.classList.remove('turned');
                     }, (500 * (index)));
                 });
         })
+        // 
     })()
 });

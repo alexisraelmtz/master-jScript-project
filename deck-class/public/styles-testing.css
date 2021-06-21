@@ -13,7 +13,7 @@ body {
 }
 
 
-.table,
+.game,
 .hand {
   display: flex;
   min-height: 100vh;

@@ -13,7 +13,7 @@ body {
 }
 
 
-/* .table {
+/* .game {
     width: 100%;
     height: 100%;
     margin: 3px;
@@ -22,7 +22,7 @@ body {
 } */
 
 .hand,
-.table,
+.game,
 .deck {
     display: flex;
     justify-content: center;
