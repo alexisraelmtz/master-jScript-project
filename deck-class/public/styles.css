@@ -45,7 +45,7 @@ body {
 .container {
     font-family: 'Roboto Slab', serif;
     /* display: inline-block; */
-    background-color: #ffffff;
+    background-color: #fdfafa;
     /* border: 3px rgba(192, 192, 192, 0.726) solid;
     
     width: 100px;
@@ -65,7 +65,7 @@ body {
     width: 100%;
     height: 100%;
     position: relative;
-    transform: rotateY(0turn);
+    /* transform: rotateY(0turn); */
 }
 
 
@@ -79,67 +79,52 @@ body {
 }
 
 
-.card .back {
-    background-image: url('./back1.png');
-    background-size: cover;
-    background-position: 0 0;
-    background-repeat: no-repeat;
-}
-
 
 .card:hover {
     z-index: 10;
 }
 
-
-.card .back,
-.card .front {
-    backface-visibility: hidden;
-}
-
-
-.card.turned {
-    transform-origin: center left;
-    transition: transform 0.5s ease-in-out;
-    transform-style: preserve-3d;
-    transform: rotateY(0.5turn) translateX(-100%);
-    transform: rotateY(-0.5turn) translateX(-100%);
-}
-
-
-
 /* 
 .card .back {
     position: absolute;
     height: 150px;
-    width: 100px;
-    /* background-color: red; */
-    /* top: 0;
+    width: 100;
+    background-color: red;
+    top: 0;
     bottom: 0;
-    border-radius: 6px; */
+    border-radius: 6px;
     /* overflow: hidden;
-    
+    background-image: url('./back1.png');
+    background-size: cover;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    transform: rotateY(-0.5turn);
+    backface-visibility: hidden;
 }
- */ 
-/* 
-.card {
-    transform-origin: center left;
-    transition: transform 0.5s ease-in;
+*/
+
+.card .container {
+    transform: center left;
+    transition: 0.35s ease-in-out;
     transform-style: preserve-3d;
-    transform: rotateY(0.5turn) translateX(-100%);
-    
-} */
+    backface-visibility: hidden;
+}
 
 
-/* .container {
+.card.turned .container {
     position: relative;
-    width: 100%;
-    height: 100%;
+    backface-visibility: hidden;
     transform-origin: center left;
-    transition: transform 0.5s ease-out;
+    transition: transform 0.35s ease-in;
     transform-style: preserve-3d;
     transform: rotateY(0.5turn) translateX(-100%);
-} */
+}
+
+
+.card .front,
+.card .back {
+    backface-visibility: hidden;
+}
 
 
 .card-corner {
@@ -153,12 +138,12 @@ body {
 
 .top-left {
     top: -6px;
-    left: -11px;
+    left: -12px;
 }
 
 
 .down-right {
-    right: -11px;
+    right: -12px;
     bottom: -6px;
     transform: rotate(0.5turn)
 }
