@@ -19,9 +19,9 @@ const fullDeck = new Deck()
 app.get('/deck', (req, res) => {
     res.json(fullDeck.cards);
 })
-app.get("/fulldeck", (req, res) => {
-    res.sendFile(__dirname + "/public/fulldeck.html")
-})
+// app.get("/fulldeck", (req, res) => {
+//     res.sendFile(__dirname + "/public/fulldeck.html")
+// })
 app.get('/game', (req, res) => {
     res.json(game);
 });
