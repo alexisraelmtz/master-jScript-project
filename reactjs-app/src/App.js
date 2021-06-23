@@ -1,15 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 
 
-function Deck(props) {
-  (async () => {
-    const cards = await (await fetch(`http://localhost:4001/${props.path}`)).json()
-    console.log(props.path, cards);
-  })();
-  return <div>I'am the {props.title} Deck!</div>
+class Deck extends React.Component {
+
+  state = {
+    cards: []
+  }
+
+  componentDidMount() {
+    (async () => {
+      const cards = await (await fetch(`http://localhost:4000/${this.props.path}`)).json()
+      console.log(`http://localhost:4040/${this.props.path}`, this.props.title, cards);
+      this.state.cards = cards;
+      this.setState({
+        cards: cards
+      })
+    })();
+  }
+
+  render() {
+    return <div>
+      <h3>{this.props.title}</h3>
+      <div className="deck">I'am the {JSON.stringify(this.state.cards)} Deck!</div>
+    </div>;
+  }
 }
-
 
 function App() {
   return (

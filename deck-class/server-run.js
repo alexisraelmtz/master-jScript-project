@@ -2,7 +2,7 @@ const { Deck, Hand } = require('./app/deck.js');
 const express = require('express');
 // const cors = require('cors')
 const app = express();
-const port = 4040;
+const port = 4001;
 
 
 
@@ -19,21 +19,23 @@ const fullDeck = new Deck()
 app.get('/deck', (req, res) => {
     res.json(fullDeck.cards);
 })
-app.get("/fulldeck", (req, res) => {
+
+app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/fulldeck.html")
 })
-app.get('/game', (req, res) => {
-    res.json(game);
-});
 
-app.get('/deck/:size', (req, res) => {
-    const { size } = req.params;
-    res.json(deck.fetchDeck(parseInt(size)));
-});
+// app.get('/game', (req, res) => {
+//     res.json(game);
+// });
 
-app.get('/admin', (req, res) => {
-    res.json(deck, game, users);
-});
+// app.get('/deck/:size', (req, res) => {
+//     const { size } = req.params;
+//     res.json(deck.fetchDeck(parseInt(size)));
+// });
+
+// app.get('/admin', (req, res) => {
+//     res.json(deck, game, users);
+// });
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);

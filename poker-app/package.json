@@ -1,0 +1,21 @@
+{
+    "scripts": {
+        "test": "jest"
+    },
+    "devDependencies": {
+        "jest": "^27.0.4"
+    },
+    "name": "deck-class",
+    "version": "1.0.0",
+    "description": "Testing Web Server for jScript code.",
+    "main": "server-run.js",
+    "directories": {
+        "test": "test"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "nodemon": "^2.0.7"
+    },
+    "author": "",
+    "license": "ISC"
+}
