@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import './card.scss';
 
-const Card = ({ number, symbol, turned, makeTurn }) => {
+const Card = ({ symbol, number, turned, makeTurn }) => {
     const isNumber = !isNaN(number);
     const [isTurned, setisTurned] = useState(turned);
 
