@@ -18,13 +18,17 @@ body {
   display: flex;
   background-size: 155px 300px;
 } */
-.deck,
+
+
 .game,
-.hand {
+.hand,
+.deck {
   display: flex;
   justify-content: center;
   /* width: 100%; */
 }
+
+
 
 
 .symbols div {
@@ -96,7 +100,7 @@ div[class$="back"] {
   bottom: 0;
   border-radius: 6px; */
   /* overflow: hidden; */
-  background-image: url('./back1.png');
+  background-image: url('../src/components/assets/back-card.png');
   background-size: cover;
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -448,7 +452,7 @@ div[number$="10"] .symbols div:nth-child(10) {
 [symbol="♠"][number="J"] .image,
 [symbol="♠"][number="Q"] .image,
 [symbol="♠"][number="K"] .image {
-  background-image: url("./front.png");
+  background-image: url("../src/components/assets/front-card.png");
   width: calc(100% - 10px - 10px);
   height: calc(100% - 10px - 10px);
   margin: 14px;
@@ -493,10 +497,5 @@ div[number$="10"] .symbols div:nth-child(10) {
 [symbol="♠"][number="Q"] .image {
   background-position: -52px 23.5px;
 }
-
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
 
 

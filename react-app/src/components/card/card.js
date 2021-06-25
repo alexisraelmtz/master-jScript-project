@@ -18,7 +18,7 @@ const Card = ({ symbol, number, turned }) => {
                 <div className="symbols" data-before={`${number}\n${symbol}`}>
                     {(number === 'A') && <i>{symbol}</i>}
                     {(['J', 'Q', 'K', 'A'].includes(number)) && <div></div>}
-                    {(isNumber) && new Array(parseInt(number)).fill(symbol).map((_, key) => <i key></i>)}
+                    {(isNumber) && new Array(parseInt(number)).fill(symbol).map((_, key) => <i key={key}>{symbol}</i>)}
                 </div>
             </div>
             <div className="back"></div>
