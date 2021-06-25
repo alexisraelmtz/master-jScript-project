@@ -3,15 +3,15 @@ import React, { useState } from "react";
 import './card.scss';
 
 
-const Card = ({ symbol, number, turned, makeTurn }) => {
+const Card = ({ symbol, number, turned }) => {
     const isNumber = !isNaN(number);
     const [isTurned, setIsTurned] = useState(turned);
 
     return <div
-        className={['card', (isTurned ? 'turned' : '')].filter(Boolean).join(' ')}
-        makeTurn={() => setIsTurned(!isTurned)}
         symbol={symbol}
         number={number}
+        className={['card', (isTurned ? 'turned' : '')].filter(Boolean).join(' ')}
+        onClick={() => setIsTurned(!isTurned)}
     >
         <div className="container">
             <div className="front">
