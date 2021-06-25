@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect, Children } from 'react';
 import { Card } from '../card/card.js';
 import './deck.scss';
 
 
-const Deck = ({ title, path, turned }) => {
+// const Deck = ({ title, path, turned }) => {
+const Deck = ({ className, child, title, path, turned }) => {
     const [cards, setCards] = useState([]);
-    const [makeTurn, setisTurned] = useState(false);
+    // const [makeTurn, setIsTurned] = useState(false);
 
     useEffect(() => {
         (async () => {
@@ -14,33 +16,20 @@ const Deck = ({ title, path, turned }) => {
     }, [path]);
 
     return (
-        <div className="{title}">
-            {cards.length === 0 ? (
-                <div>Loading...</div>
-            ) : (
+        <div className={[`${title}`, className].filter(Boolean).join(' ')}>
+            {(cards.length === 0) ?
+                <div>Loading ... </div> :
                 <>
-                    <h3>{title}</h3>
-                    <div className="card">
-                        {cards.map((card, index) => {
-                            const number = card.slice(0, -1);
-                            const symbol = card.slice(-1);
-                            const isTurned = parseInt(turned) > index;
-                            return (
-                                <>
-                                    <Card
-                                        symbol={symbol}
-                                        number={number}
-                                        key={index}
-                                        turned={isTurned}
-                                        makeTurn={makeTurn}
-                                    />
-                                </>
-                            );
-                        })}
-                    </div>
-                    <button onClick={() => setisTurned(turned)}>{makeTurn}</button>
+                    {child}
+                    {cards.map((card, key) => {
+                        const number = card.slice(0, -1);
+                        const symbol = card.slice(-1);
+                        const isTurned = parseInt(turned) > key;
+
+                        return <Card {...{ symbol, number, key, turned: isTurned }} />
+                    })}
                 </>
-            )}
+            }
         </div>
     );
 };

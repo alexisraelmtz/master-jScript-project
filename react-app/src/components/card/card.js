@@ -2,49 +2,28 @@
 import React, { useState } from "react";
 import './card.scss';
 
+
 const Card = ({ symbol, number, turned, makeTurn }) => {
     const isNumber = !isNaN(number);
-    const [isTurned, setisTurned] = useState(turned);
+    const [isTurned, setIsTurned] = useState(turned);
 
-    const isAce = (num, sym) => (
-        num === "A" ?
-            <div id="ace">{sym}</div>
-            : "");
-
-    const choseClass = () => {
-        if (isTurned && !makeTurn) {
-            return "turned";
-        } else if (isTurned && makeTurn) return "";
-    };
-
-    return (
-        <div
-            className={`card ${choseClass()}`.trim()}
-            onClick={() => setisTurned(!isTurned)}>
-            <div className="container">
-                <div className={`front ${symbol} ${number}`}>
-                    <div className="card-corner top-left">
-                        <div className="number">{number}</div>
-                        <div className="symbol">{symbol}</div>
-                    </div>
-                    <div className="symbols">
-                        {isNumber
-                            ? new Array(parseInt(number))
-                                .fill(symbol)
-                                .map((cardSymbol, index) => (
-                                    <div key={index}>{cardSymbol}</div>
-                                ))
-                            : isAce(number, symbol)}
-                    </div>
-                    <div className="card-corner down-right">
-                        <div>{number}</div>
-                        <div>{symbol}</div>
-                    </div>
+    return <div
+        className={['card', (isTurned ? 'turned' : '')].filter(Boolean).join(' ')}
+        makeTurn={() => setIsTurned(!isTurned)}
+        symbol={symbol}
+        number={number}
+    >
+        <div className="container">
+            <div className="front">
+                <div className="symbols" data-before={`${number}\n${symbol}`}>
+                    {(number === 'A') && <i>{symbol}</i>}
+                    {(['J', 'Q', 'K', 'A'].includes(number)) && <div></div>}
+                    {(isNumber) && new Array(parseInt(number)).fill(symbol).map((_, key) => <i key></i>)}
                 </div>
-                <div className="back"></div>
             </div>
+            <div className="back"></div>
         </div>
-    );
+    </div>
 };
 
 export {
