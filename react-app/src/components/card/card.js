@@ -7,6 +7,7 @@ const Card = ({ symbol, number, turned }) => {
     const isNumber = !isNaN(number);
     const [isTurned, setIsTurned] = useState(turned);
 
+
     return <div
         symbol={symbol}
         number={number}
@@ -15,10 +16,18 @@ const Card = ({ symbol, number, turned }) => {
     >
         <div className="container">
             <div className="front">
-                <div className="symbols" data-before={`${number}\n${symbol}`}>
-                    {(number === 'A') && <i>{symbol}</i>}
-                    {(['J', 'Q', 'K', 'A'].includes(number)) && <div></div>}
-                    {(isNumber) && new Array(parseInt(number)).fill(symbol).map((_, key) => <i key={key}>{symbol}</i>)}
+                <div className="card-corner top-left">
+                    <div>{number}</div>
+                    <div>{symbol}</div>
+                </div>
+                <div className="symbols">
+                    {(number === 'A') && <div>{symbol}</div>}
+                    {(['J', 'Q', 'K'].includes(number)) && <div className="image"></div>}
+                    {(isNumber) && new Array(parseInt(number)).fill(symbol).map((_, key) => <div key={key}>{symbol}</div>)}
+                </div>
+                <div className="card-corner down-right">
+                    <div>{number}</div>
+                    <div>{symbol}</div>
                 </div>
             </div>
             <div className="back"></div>

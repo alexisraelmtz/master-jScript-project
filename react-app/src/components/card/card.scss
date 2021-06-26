@@ -1,22 +1,17 @@
-
-div[symbol$="♣"],
-div[symbol$="♠"] {
-  color: rgb(0, 17, 173);
-}
-div[symbol$="♦"],
-div[symbol$="♥"] {
-  color: rgb(189, 0, 0);
-}
+// @import '../assets/variables.scss';
 
 
 div[number$="A"] .symbols div {
-  top: 45px;
+  top: 65px;
+  left: 45px;
   transform: scale(3.75);
 }
+
 div[number$="2"] .symbols div {
   position: absolute;
   left: 35%;
 }
+
 div[number$="2"] .symbols div:nth-child(1) {
   top: 15%;
 }
@@ -24,6 +19,9 @@ div[number$="2"] .symbols div:nth-child(2) {
   bottom: 15%;
   transform: rotate(0.5turn) scale(2.1);
 }
+
+
+
 div[number$="3"] .symbols div {
   position: absolute;
   left: 35%;
@@ -276,61 +274,3 @@ div[number$="10"] .symbols div:nth-child(10) {
   transform: rotate(0.5turn) scale(2.1);
 }
 
-
-[symbol="♣"][number="J"] .image,
-[symbol="♣"][number="Q"] .image,
-[symbol="♣"][number="K"] .image,
-[symbol="♦"][number="J"] .image,
-[symbol="♦"][number="Q"] .image,
-[symbol="♦"][number="K"] .image,
-[symbol="♥"][number="J"] .image,
-[symbol="♥"][number="Q"] .image,
-[symbol="♥"][number="K"] .image,
-[symbol="♠"][number="J"] .image,
-[symbol="♠"][number="Q"] .image,
-[symbol="♠"][number="K"] .image {
-  background-image: url("../assets/front-card.png");
-  width: calc(100% - 10px - 10px);
-  height: calc(100% - 10px - 10px);
-  margin: 14px;
-  background-repeat: no-repeat;
-  background-size: 155px 300px;
-}
-
-
-[symbol="♦"][number="J"] .image {
-  background-position: -1px -125px;
-}
-[symbol="♦"][number="K"] .image {
-  background-position: -102.5px -125px;
-}
-[symbol="♦"][number="Q"] .image {
-  background-position: -52px -125px;
-}
-[symbol="♥"][number="J"] .image {
-  background-position: -1px -51px;
-}
-[symbol="♥"][number="K"] .image {
-  background-position: -102.5px -51px;
-}
-[symbol="♥"][number="Q"] .image {
-  background-position: -52px -51px;
-}
-[symbol="♣"][number="J"] .image {
-  background-position: -1px -198.5px;
-}
-[symbol="♣"][number="K"] .image {
-  background-position: -102.5px -198.5px;
-}
-[symbol="♣"][number="Q"] .image {
-  background-position: -52px -198.5px;
-}
-[symbol="♠"][number="J"] .image {
-  background-position: -1px 23.5px;
-}
-[symbol="♠"][number="K"] .image {
-  background-position: -102.5px 23.5px;
-}
-[symbol="♠"][number="Q"] .image {
-  background-position: -52px 23.5px;
-}

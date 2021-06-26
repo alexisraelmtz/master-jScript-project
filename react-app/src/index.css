@@ -4,10 +4,10 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-blend-mode: overlay;
-  background-color: #d3d3d3;
+  background-color: #e4e4e4;
   width: 100%;
   display: flex;
-  flex-flow: column;
+  /* flex-flow: column; */
 }
 
 
