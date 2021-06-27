@@ -1,4 +1,4 @@
-import { Deck } from '../../../lib/deck';
+import { Deck } from '../../../lib/main';
 
 const deck = new Deck();
 
@@ -7,5 +7,5 @@ export default function handler(req, res) {
     const hand = deck.fetchDeck(parseInt(quantity));
     res
         .status(200)
-        .send({ hand })
+        .send(hand)
 }

@@ -1,0 +1,21 @@
+@import '../styles/variables.scss';
+
+
+.body {
+  background-image: url("../components/assets/bg01.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-blend-mode: overlay;
+  background-color: #e4e4e4;
+  width: 100%;
+  display: flex;
+  /* flex-flow: column; */
+}
+
+
+
+.code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

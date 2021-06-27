@@ -31,6 +31,3 @@ module.exports = {
     Deck
 };
 
-
-// let deck = new Deck();
-// console.log(deck.cards);
