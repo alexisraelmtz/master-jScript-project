@@ -33,19 +33,83 @@ export default function Home({ title, game, hand, fullDeck }) {
 }
 
 
+// export async function getServerSideProps(context) {
+//   const deck = new Deck();
+//   const game = deck.fetchDeck(5);
+//   const hand = deck.fetchDeck(2);
+//   const deck2 = new Deck();
+//   const fullDeck = deck2.cards
+
+//   return {
+//     props: {
+//       title: 'jScript.Casino',
+//       game,
+//       hand,
+//       fullDeck
+//     }
+//   }
+// }
+
+
 export async function getServerSideProps(context) {
-  const deck = new Deck();
-  const game = deck.fetchDeck(5);
-  const hand = deck.fetchDeck(2);
-  const deck2 = new Deck();
-  const fullDeck = deck2.cards
+  const gameData = await (await fetch('http://localhost:4000', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      query: `
+        query {
+          game {
+            number
+            symbol
+          }
+        }
+      `
+    })
+  })).json();
+
+  const handData = await (await fetch('http://localhost:4000', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      query: `query GetCards($cards: Int){
+        getCards(cards: $cards) {
+          symbol
+          number
+        }
+      }`,
+      variables: {
+        cards: 2
+      }
+    })
+  })).json();
+
+  const newData = await (await fetch('http://localhost:4000', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      query: `
+      query {
+        newDeck {
+          number
+          symbol
+        }
+      }
+    `
+    })
+  })).json();
 
   return {
     props: {
       title: 'jScript.Casino',
-      game,
-      hand,
-      fullDeck
+      game: gameData.data.game,
+      hand: handData.data.getCards,
+      fullDeck: newData.data.newDeck,
     }
   }
 }
