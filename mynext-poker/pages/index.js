@@ -2,8 +2,8 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
 
-import { Deck } from './../lib/main';
-import { Deck as Cards } from '../components/deck/deck';
+import Deck from "./../lib/main";
+import Cards from "../components/deck/deck";
 
 
 export default function Home({ title, game, hand, fullDeck }) {

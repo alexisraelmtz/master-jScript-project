@@ -27,7 +27,5 @@ class Hand {
     }
 };
 
-module.exports = {
-    Deck
-};
+export default Deck;
 
