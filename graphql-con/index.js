@@ -60,8 +60,8 @@ const typeDefs = gql`
 
 const users = require("./users.json");
 let deck = new Deck();
-let game = deck.fetchCards(5);
-let full = new Deck();
+const game = deck.fetchCards(5);
+const full = new Deck();
 
 const resolvers = {
   Query: {
@@ -75,7 +75,7 @@ const resolvers = {
   Mutation: {
     restoreCards: () => {
       deck = new Deck();
-      newDeck = new Deck();
+      // newDeck = new Deck();
       game = deck.fetchCards(5);
       return `Ok!`;
     },

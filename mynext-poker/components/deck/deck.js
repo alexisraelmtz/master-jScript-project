@@ -15,7 +15,7 @@ const Deck = ({ className, Children, title, cards, turned }) => {
     //     })();
     // }, [path]);
 
-    // console.log(cards)
+    console.log(cards)
     return (
         <div className={[`styles.${title}`, className].filter(Boolean).join(' ')}>
             {(cards.length === 0) ?

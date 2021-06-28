@@ -1,9 +1,46 @@
 // import Image from 'next/image'
+import { ApolloClient, gql, inMemoryCache } from '@apollo/client'
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
 
 import Deck from "./../lib/main";
 import Cards from "../components/deck/deck";
+import { func } from 'prop-types';
+
+
+const client = new ApolloClient({
+  uri: 'http://localhost:4000',
+  cache: new inMemoryCache()
+});
+
+const gameQuery = gql`
+        query {
+          game {
+            number
+            symbol
+          }
+        }
+      `
+
+const getCardsQuery = gql`query GetCards($cards: Int){
+          getCards(cards: $cards) {
+            symbol
+            number
+          }
+        }`
+
+const fullDeckQuery = gql`
+      query {
+        newDeck {
+          number
+          symbol
+        }
+      }
+    `
+
+
+
+
 
 
 export default function Home({ title, game, hand, fullDeck }) {
@@ -51,58 +88,63 @@ export default function Home({ title, game, hand, fullDeck }) {
 // }
 
 
+// export async function getServerSideProps(context) {
+//   const gameData = await (await fetch('http://localhost:4000', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({
+//       query: `
+//         query {
+//           game {
+//             number
+//             symbol
+//           }
+//         }
+//       `
+//     })
+//   })).json();
+
+//   const handData = await (await fetch('http://localhost:4000', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({
+//       query: `query GetCards($cards: Int){
+//         getCards(cards: $cards) {
+//           symbol
+//           number
+//         }
+//       }`,
+//       variables: {
+//         cards: 2
+//       }
+//     })
+//   })).json();
+
+//   const newData = await (await fetch('http://localhost:4000', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({
+//       query: `
+//       query {
+//         newDeck {
+//           number
+//           symbol
+//         }
+//       }
+//     `
+//     })
+//   })).json();
+
 export async function getServerSideProps(context) {
-  const gameData = await (await fetch('http://localhost:4000', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      query: `
-        query {
-          game {
-            number
-            symbol
-          }
-        }
-      `
-    })
-  })).json();
-
-  const handData = await (await fetch('http://localhost:4000', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      query: `query GetCards($cards: Int){
-        getCards(cards: $cards) {
-          symbol
-          number
-        }
-      }`,
-      variables: {
-        cards: 2
-      }
-    })
-  })).json();
-
-  const newData = await (await fetch('http://localhost:4000', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      query: `
-      query {
-        newDeck {
-          number
-          symbol
-        }
-      }
-    `
-    })
-  })).json();
+  const gameData = await client.query({ query: gameQuery });
+  const handData = await client.query({ query: getCardsQuery, variables: { cards: 2 }, fetchPolicy: 'no-cache' });
+  const newData = await client.query({ query: fullNewDeckQuery });
 
   return {
     props: {
