@@ -1,16 +1,16 @@
 // import Image from 'next/image'
-import { ApolloClient, gql, inMemoryCache } from '@apollo/client'
+import { ApolloClient, gql, InMemoryCache } from '@apollo/client'
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
 
-import Deck from "./../lib/main";
+// import Deck from "./../lib/main";
 import Cards from "../components/deck/deck";
-import { func } from 'prop-types';
+// import { func } from 'prop-types';
 
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000',
-  cache: new inMemoryCache()
+  uri: 'http://localhost:4000/',
+  cache: new InMemoryCache(),
 });
 
 const gameQuery = gql`
@@ -29,7 +29,7 @@ const getCardsQuery = gql`query GetCards($cards: Int){
           }
         }`
 
-const fullDeckQuery = gql`
+const fullNewDeckQuery = gql`
       query {
         newDeck {
           number
@@ -37,10 +37,6 @@ const fullDeckQuery = gql`
         }
       }
     `
-
-
-
-
 
 
 export default function Home({ title, game, hand, fullDeck }) {
@@ -68,6 +64,27 @@ export default function Home({ title, game, hand, fullDeck }) {
     </body>
   </>)
 }
+
+
+export async function getServerSideProps(context) {
+  const gameData = await client.query({ query: gameQuery });
+  const handData = await client.query({
+    query: getCardsQuery,
+    variables: { cards: 2 },
+    fetchPolicy: 'no-cache'
+  });
+  const newData = await client.query({ query: fullNewDeckQuery });
+
+  return {
+    props: {
+      title: 'jScript.Casino',
+      game: gameData.data.game,
+      hand: handData.data.getCards,
+      fullDeck: newData.data.newDeck,
+    }
+  }
+}
+
 
 
 // export async function getServerSideProps(context) {
@@ -140,18 +157,3 @@ export default function Home({ title, game, hand, fullDeck }) {
 //     `
 //     })
 //   })).json();
-
-export async function getServerSideProps(context) {
-  const gameData = await client.query({ query: gameQuery });
-  const handData = await client.query({ query: getCardsQuery, variables: { cards: 2 }, fetchPolicy: 'no-cache' });
-  const newData = await client.query({ query: fullNewDeckQuery });
-
-  return {
-    props: {
-      title: 'jScript.Casino',
-      game: gameData.data.game,
-      hand: handData.data.getCards,
-      fullDeck: newData.data.newDeck,
-    }
-  }
-}
