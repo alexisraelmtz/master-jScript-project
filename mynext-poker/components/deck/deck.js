@@ -1,28 +1,26 @@
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
 // import React, { useState, useEffect, CChhildren } from 'react';
 import Card from '../card/card';
-// import './deck.scss';
+import styles from '../../styles/styles.module.scss';
 
 
-// const Deck = ({ title, path, turned }) => {
-const Deck = ({ className, child, title, path, turned }) => {
-    const [cards, setCards] = useState([]);
-    // const [makeTurn, setIsTurned] = useState(false);
+const Deck = ({ className, child, title, cards, turned }) => {
+    // const [cards, setCards] = useState([]);
+    // // const [makeTurn, setIsTurned] = useState(false);
 
-    useEffect(() => {
-        (async () => {
-            setCards(await (await fetch(`http://localhost:3000/api/cards/${path}`)).json());
-        })();
-    }, [path]);
+    // useEffect(() => {
+    //     (async () => {
+    //         setCards(await (await fetch(`http://localhost:3000/api/cards/${path}`)).json());
+    //     })();
+    // }, [path]);
 
-    console.log(cards)
+    // console.log(cards)
     return (
-        <div className={[`${title}`, className].filter(Boolean).join(' ')}>
+        <div className={[`styles.${title}`, className].filter(Boolean).join(' ')}>
             {(cards.length === 0) ?
                 <div>Loading ... </div> :
                 <>
                     {child}
-
                     {cards.map((card, key) => {
                         const number = card.slice(0, -1);
                         const symbol = card.slice(-1);

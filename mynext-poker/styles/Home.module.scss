@@ -1,13 +1,13 @@
 @import '../styles/variables.scss';
 
 
-.body {
+.home {
   background-image: url("../components/assets/bg01.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
   background-blend-mode: overlay;
-  background-color: #e4e4e4;
+  background-color: $bg-white;
   width: 100%;
   display: flex;
   /* flex-flow: column; */
@@ -18,4 +18,11 @@
 .code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
